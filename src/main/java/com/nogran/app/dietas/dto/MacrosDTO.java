@@ -1,19 +1,15 @@
-package com.nogran.app.dietas.dto.response;
+package com.nogran.app.dietas.dto;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
-public class FoodResponseDTO {
-
-  private String name;
-
-  private float grams;
+@Builder
+public class MacrosDTO {
 
   private float carbohydrate;
-
   private float protein;
-
   private float fat;
-
   private float totalCalories;
+
 }

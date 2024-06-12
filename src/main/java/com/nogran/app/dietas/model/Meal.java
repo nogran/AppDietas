@@ -1,7 +1,7 @@
 package com.nogran.app.dietas.model;
 
-import java.time.LocalDateTime;
-import java.util.List;
+import com.nogran.app.dietas.enums.MacroEnum;
+import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class Meal {
 
-  private String nome;
-  private List<Food> foods;
-  private float totalCalorias;
-  private LocalDateTime dataCriacao;
+  private Food food;
+  private MacroEnum mealType;
+  private LocalDate referenceDate;
+
 }

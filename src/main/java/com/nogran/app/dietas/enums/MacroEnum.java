@@ -2,16 +2,14 @@ package com.nogran.app.dietas.enums;
 
 import com.nogran.app.dietas.exception.GoalNotFoundException;
 
-public enum MealTypeEnum {
-  BREAKFAST("Cafe da Manha"),
-  LUNCH("Almoco"),
-  SNACK("Lanche"),
-  DINNER("Jantar"),
-  SUPPER("Ceia");
+public enum MacroEnum {
+  PROTEIN("Proteina"),
+  FAT("Gordura"),
+  CARBOHYDRATE("Carboidrato");
 
   private final String type;
 
-  MealTypeEnum(String type) {
+  MacroEnum(String type) {
     this.type = type;
   }
 
