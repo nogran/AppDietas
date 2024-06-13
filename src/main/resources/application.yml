@@ -14,3 +14,7 @@ spring:
     enabled: true
     schemas: app_dietas
     baselineOnMigrate: true
+
+app-dietas:
+  jwtSecret: 1
+  jwtExpirationMs: 1

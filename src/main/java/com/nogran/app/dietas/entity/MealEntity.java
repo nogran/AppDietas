@@ -1,4 +1,4 @@
-package com.nogran.app.dietas.model.entity;
+package com.nogran.app.dietas.entity;
 
 import com.nogran.app.dietas.enums.MacroEnum;
 import jakarta.persistence.Column;

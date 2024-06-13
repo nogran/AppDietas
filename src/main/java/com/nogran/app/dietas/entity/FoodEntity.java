@@ -1,4 +1,4 @@
-package com.nogran.app.dietas.model.entity;
+package com.nogran.app.dietas.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

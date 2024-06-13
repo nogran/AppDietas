@@ -1,6 +1,6 @@
 package com.nogran.app.dietas.repository;
 
-import com.nogran.app.dietas.model.entity.MealEntity;
+import com.nogran.app.dietas.entity.MealEntity;
 import java.time.LocalDate;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

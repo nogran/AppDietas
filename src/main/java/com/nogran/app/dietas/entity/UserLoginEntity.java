@@ -1,4 +1,4 @@
-package com.nogran.app.dietas.model.entity;
+package com.nogran.app.dietas.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,16 +12,19 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
-@Table(name = "login", catalog = "login")
+@Table(name = "user", catalog = "user")
 @RequiredArgsConstructor
 @EntityListeners(value = AuditingEntityListener.class)
 @Data
-public class UserEntity {
+public class UserLoginEntity {
 
   @Id
-  @SequenceGenerator(name = "login_seq", sequenceName = "login_seq", allocationSize = 1)
-  @GeneratedValue(generator = "login_seq")
+  @SequenceGenerator(name = "user_seq", sequenceName = "user_seq", allocationSize = 1)
+  @GeneratedValue(generator = "user_seq")
   private Long id;
+
+  @Column(name = "name")
+  private String name;
 
   @Column(name = "email")
   private String email;

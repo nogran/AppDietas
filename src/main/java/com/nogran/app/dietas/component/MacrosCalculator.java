@@ -1,20 +1,20 @@
 package com.nogran.app.dietas.component;
 
 import com.nogran.app.dietas.dto.MacrosDTO;
-import com.nogran.app.dietas.model.Meal;
+import com.nogran.app.dietas.model.Food;
 import java.util.List;
 
-public class MacrosCalculatorComponent {
+public class MacrosCalculator {
 
-  private MacrosCalculatorComponent() {
+  private MacrosCalculator() {
 
   }
 
-  public static MacrosDTO calculate(List<Meal> meals) {
-    var totalCalories = CaloriesComponent.calculateDailyCalories(meals);
-    var totalCarbohydrate = sum(meals.stream().map(i -> i.getFood().getCarbohydrate()).toList());
-    var totalProtein = sum(meals.stream().map(i -> i.getFood().getProtein()).toList());
-    var totalFat = sum(meals.stream().map(i -> i.getFood().getFat()).toList());
+  public static MacrosDTO calculate(List<Food> foods) {
+    var totalCalories = CaloriesComponent.sumCalories(foods);
+    var totalCarbohydrate = sum(foods.stream().map(i -> i.getCarbohydrate()).toList());
+    var totalProtein = sum(foods.stream().map(i -> i.getProtein()).toList());
+    var totalFat = sum(foods.stream().map(i -> i.getFat()).toList());
 
     return MacrosDTO.builder()
         .carbohydrate(totalCarbohydrate)
