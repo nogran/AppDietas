@@ -1,4 +1,4 @@
-INSERT INTO app_dietas.food
+INSERT INTO app_dietas.ngr_food
 (id, "name", grams, carbohydrate, protein, fat, total_calories, company, created_by, created_at)
 VALUES
     (nextval('app_dietas.food_seq'::regclass), 'Arroz cru', 100, 70, 7, 1, 317, '', 'carga inicial', CURRENT_TIMESTAMP),

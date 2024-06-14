@@ -16,5 +16,5 @@ spring:
     baselineOnMigrate: true
 
 app-dietas:
-  jwtSecret: 1
-  jwtExpirationMs: 1
+  jwtSecret: bxOksa8BHgdAhR80Y3pEYvS5M+MnF2sheFDqprkTqQ4odqoszJLW1ikw64/nT/dTvlgrcBTq7HfK1B9Gai2h5A==
+  jwtExpirationMs: 900000

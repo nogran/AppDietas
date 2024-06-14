@@ -1,13 +1,10 @@
 package com.nogran.app.dietas.service;
 
-import com.nogran.app.dietas.model.UserLogin;
+import com.nogran.app.dietas.dto.AccessDTO;
+import com.nogran.app.dietas.dto.UserDTO;
 
 public interface AuthService {
 
-  UserLogin save(UserLogin userLogin);
-
-  UserLogin login(String email, String password);
-
-  UserLogin findByEmail(String email);
+  AccessDTO login(UserDTO userDTO);
 
 }

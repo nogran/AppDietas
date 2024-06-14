@@ -9,7 +9,7 @@ public class CaloriesComponent {
 
   }
 
-  public static float sumCalories(List<Food> foods) {
+  public static float sum(List<Food> foods) {
     return foods.stream()
         .map(i -> i.getTotalCalories())
         .reduce(Float::sum)

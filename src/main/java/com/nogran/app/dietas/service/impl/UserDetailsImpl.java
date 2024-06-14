@@ -1,20 +1,36 @@
 package com.nogran.app.dietas.service.impl;
 
+import com.nogran.app.dietas.entity.UserEntity;
+import java.util.ArrayList;
 import java.util.Collection;
-import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Service;
 
-@Service
-@RequiredArgsConstructor
 public class UserDetailsImpl implements UserDetails {
 
-  private Long id;
   private String name;
-  private String userName;
+  private String username;
+  private String email;
   private String password;
   private Collection<? extends GrantedAuthority> authorities;
+
+  public UserDetailsImpl(String name, String username, String email, String password,
+      Collection<? extends GrantedAuthority> authorities) {
+    this.name = name;
+    this.username = username;
+    this.email = email;
+    this.password = password;
+    this.authorities = authorities;
+  }
+
+  public static UserDetailsImpl build(UserEntity user) {
+    return new UserDetailsImpl(
+        user.getName(),
+        user.getLogin(),
+        user.getEmail(),
+        user.getPassword(),
+        new ArrayList<>());
+  }
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -28,7 +44,7 @@ public class UserDetailsImpl implements UserDetails {
 
   @Override
   public String getUsername() {
-    return userName;
+    return email;
   }
 
   @Override

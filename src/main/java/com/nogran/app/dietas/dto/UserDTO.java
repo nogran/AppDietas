@@ -1,18 +1,17 @@
-package com.nogran.app.dietas.model;
+package com.nogran.app.dietas.dto;
 
+import com.nogran.app.dietas.model.Metabolism;
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
-public class User {
+@AllArgsConstructor
+public class UserDTO {
 
   private String name;
-  private String username;
   private String email;
+  private String username;
   private String password;
 
   private LocalDate birthDate;
@@ -20,5 +19,6 @@ public class User {
   private int height;
   private String gender;
   private String goal;
+  private Metabolism metabolism;
 
 }
