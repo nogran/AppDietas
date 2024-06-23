@@ -52,4 +52,14 @@ public class JwtUtils {
     }
     return false;
   }
+
+  public String getUsernameToken(String token) {
+    return Jwts.parser().setSigningKey(getSigninKey()).build()
+        .parseClaimsJws(token).getBody().getSubject();
+  }
+
+  public Key getSigninKey() {
+    SecretKey key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
+    return key;
+  }
 }

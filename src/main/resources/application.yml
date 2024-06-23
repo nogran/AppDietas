@@ -11,9 +11,9 @@ spring:
         show_sql: false
         format_sql: true
   flyway:
-    enabled: true
-    schemas: app_dietas
-    baselineOnMigrate: true
+    enabled: ${FLYWAY_ENABLED:true}
+    schemas: ${DB_SCHEMA:app_dietas}
+    baselineOnMigrate: ${FLYWAY_BASELINE_ON_MIGRATE:true}
 
 app-dietas:
   jwtSecret: bxOksa8BHgdAhR80Y3pEYvS5M+MnF2sheFDqprkTqQ4odqoszJLW1ikw64/nT/dTvlgrcBTq7HfK1B9Gai2h5A==

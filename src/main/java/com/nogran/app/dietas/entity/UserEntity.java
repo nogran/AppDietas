@@ -1,8 +1,11 @@
 package com.nogran.app.dietas.entity;
 
+import com.nogran.app.dietas.entity.enums.UserStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
@@ -51,6 +54,10 @@ public class UserEntity {
 
   @Column(name = "gender")
   private String gender;
+
+  @Enumerated(EnumType.STRING)
+  @Column(name= "user_status", nullable = false)
+  private UserStatus userStatus;
 
 //  @Column(name = "goal")
 //  private String goal;

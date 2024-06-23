@@ -11,7 +11,7 @@ public class MacrosCalculator {
   }
 
   public static MacrosDTO calculate(List<Food> foods) {
-    var totalCalories = CaloriesComponent.sum(foods);
+    var totalCalories = CaloriesCalculator.sum(foods);
     var totalCarbohydrate = sum(foods.stream().map(i -> i.getCarbohydrate()).toList());
     var totalProtein = sum(foods.stream().map(i -> i.getProtein()).toList());
     var totalFat = sum(foods.stream().map(i -> i.getFat()).toList());

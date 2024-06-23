@@ -1,5 +1,6 @@
 package com.nogran.app.dietas.service.impl;
 
+import com.nogran.app.dietas.entity.enums.UserStatus;
 import com.nogran.app.dietas.mapper.UserMapper;
 import com.nogran.app.dietas.model.User;
 import com.nogran.app.dietas.repository.UserRepository;
@@ -17,6 +18,7 @@ public class UserServiceImpl implements UserService {
   private final PasswordEncoder passwordEncoder;
 
   public User save(User user) {
+    user.setStatus(UserStatus.PENDING);
     var entity = mapper.modelToEntity(user);
     entity.setPassword(passwordEncoder.encode(user.getPassword()));
     return mapper.entityToModel(

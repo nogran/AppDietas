@@ -22,6 +22,7 @@ public interface UserMapper {
   List<User> entityToModel(List<UserEntity> entities);
 
   @Mapping(target = "login", source = "username")
+  @Mapping(target = "userStatus", source = "status")
   UserEntity modelToEntity(User user);
 
   UserResponseDTO toResponse(User user);
