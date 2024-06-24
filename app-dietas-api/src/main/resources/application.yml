@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_SERVER:localhost}:${DB_PORT:5432}/${POSTGRES_DB:postgres}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:password}
+    hikari:
+      schema: app_dietas
+  jpa:
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: true
+  flyway:
+    enabled: ${FLYWAY_ENABLED:true}
+    schemas: ${DB_SCHEMA:app_dietas}
+    baselineOnMigrate: ${FLYWAY_BASELINE_ON_MIGRATE:true}
+
+app-dietas:
+  jwtSecret: bxOksa8BHgdAhR80Y3pEYvS5M+MnF2sheFDqprkTqQ4odqoszJLW1ikw64/nT/dTvlgrcBTq7HfK1B9Gai2h5A==
+  jwtExpirationMs: 900000
