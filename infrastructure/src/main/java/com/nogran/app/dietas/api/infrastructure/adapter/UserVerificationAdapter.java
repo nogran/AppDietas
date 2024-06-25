@@ -24,7 +24,7 @@ public class UserVerificationAdapter implements UserVerificationPersistence {
 
   @Override
   public Optional<UserVerification> findByLogin(String login) {
-    var entity = repository.findByUserEntityLogin(login);
+    var entity = repository.findByUserLogin(login);
     return Optional.ofNullable(mapper.toDomain(entity.get()));
   }
 

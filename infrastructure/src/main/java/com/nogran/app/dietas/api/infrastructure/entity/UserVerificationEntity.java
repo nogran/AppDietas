@@ -15,7 +15,9 @@ import java.util.UUID;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
@@ -33,19 +35,26 @@ public class UserVerificationEntity {
   @Column(name = "uuid", nullable = false)
   private UUID uuid;
 
-  @Column(name = "expiration_date", nullable = false)
-  private Instant expirationDate;
-
-  @ManyToOne
-  @JoinColumn(name = "user_entity_id", referencedColumnName = "id", unique = true)
-  private UserEntity userEntity;
-
   @CreatedBy
   @Column(name = "created_by", nullable = false)
   private String createdBy;
+
+  @Column(name = "expiration_date", nullable = false)
+  private Instant expirationDate;
 
   @CreationTimestamp
   @Column(name = "created_at", nullable = false, updatable = false, columnDefinition = "timestamp")
   private OffsetDateTime createdAt;
 
+  @LastModifiedBy
+  @Column(name = "updated_by")
+  private String updatedBy;
+
+  @UpdateTimestamp
+  @Column(name = "updated_at", columnDefinition = "timestamp")
+  private OffsetDateTime updatedAt;
+
+  @ManyToOne
+  @JoinColumn(name = "user_id", referencedColumnName = "id", unique = true)
+  private UserEntity user;
 }

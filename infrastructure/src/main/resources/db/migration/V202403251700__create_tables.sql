@@ -39,10 +39,12 @@ create table ngr_user
 create sequence app_dietas.ngr_user_verification_seq;
 create table ngr_user_verification
 (
-    id              BIGINT       NOT NULL PRIMARY KEY DEFAULT NEXTVAL('app_dietas.ngr_user_verification_seq'),
-    uuid            UUID         NOT NULL,
-    expiration_date timestamp    NOT NULL,
-    user_entity_id  BIGINT       NOT NULL,
-    created_by      VARCHAR(50)  NOT NULL,
-    created_at      timestamp    NOT NULL             DEFAULT current_timestamp
+    id              BIGINT      NOT NULL PRIMARY KEY DEFAULT NEXTVAL('app_dietas.ngr_user_verification_seq'),
+    uuid            UUID        NOT NULL,
+    user_id         BIGINT      NOT NULL UNIQUE,
+    created_by      VARCHAR(50) NOT NULL,
+    expiration_date timestamp   NOT NULL,
+    created_at      timestamp   NOT NULL             DEFAULT current_timestamp,
+    updated_by      VARCHAR(50) NULL,
+    updated_at      timestamp   NULL
 );

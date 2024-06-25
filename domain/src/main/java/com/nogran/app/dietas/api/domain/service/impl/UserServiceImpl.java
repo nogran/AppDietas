@@ -4,7 +4,6 @@ import com.nogran.app.dietas.api.domain.dto.enums.UserStatus;
 import com.nogran.app.dietas.api.domain.model.User;
 import com.nogran.app.dietas.api.domain.model.UserVerification;
 import com.nogran.app.dietas.api.domain.persistence.UserPersistence;
-import com.nogran.app.dietas.api.domain.persistence.UserVerificationPersistence;
 import com.nogran.app.dietas.api.domain.service.EmailService;
 import com.nogran.app.dietas.api.domain.service.UserService;
 import com.nogran.app.dietas.api.domain.service.UserVerificationService;

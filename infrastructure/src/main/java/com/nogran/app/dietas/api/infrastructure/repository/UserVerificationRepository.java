@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserVerificationRepository extends JpaRepository<UserVerificationEntity, Long> {
 
-  Optional<UserVerificationEntity> findByUserEntityLogin(String login);
+  Optional<UserVerificationEntity> findByUserLogin(String login);
 }
