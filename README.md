@@ -1,63 +1,55 @@
-# AppDietas.api 🍏💪
+# 🍎 App.Dietas.API
+** Calculadora da tabela nutricional**
 
-Bem-vindo ao AppDietas, o seu parceiro de confiança na jornada para uma vida mais saudável e equilibrada! Este aplicativo incrível foi desenvolvido para tornar a sua experiência de dieta divertida, motivadora e eficaz. Prepare-se para embarcar em uma jornada transformadora rumo ao seu melhor eu!
+Este aplicativo foi desenvolvido para tornar sua experiência de dieta divertida, motivadora e eficaz. Ele oferece uma análise detalhada das calorias e nutrientes dos alimentos que você consome, permitindo que você entenda melhor a composição nutricional de cada refeição.
 
-## 🌟 Recursos
+Compare o tamanho das porções para ajustar suas escolhas alimentares e veja como cada alimento apoia seus objetivos, seja perder peso, ganhar massa muscular ou simplesmente manter uma dieta equilibrada.
 
-### 📅 Planejamento Personalizado
-- Crie planos de dieta personalizados com base nos seus objetivos.
-- Estabeleça metas realistas e atinja resultados surpreendentes.
+- **Calculadora de Gasto Energético Diário**
+Monitore calorias e macronutrientes consumidos diariamente
 
-### 🥗 Banco de Receitas Saudáveis
-- Explore uma variedade de receitas deliciosas e saudáveis, elaboradas por outros usuários.
-- Adicione facilmente os ingredientes ao seu planejamento diário.
-- Crie novas receitas deliciosas e compartilhe com seus amigos.
+- ** Compare Diferentes Tamanhos de Porções de Alimentos **
+Analise nutrientes e calorias em diferentes tamanhos de porções
 
-### 🏋️‍♂️ Rotinas de Exercícios
-- Acesse rotinas de exercícios adaptadas às suas preferências e nível de condicionamento físico.
-- Acompanhe o seu progresso e celebre cada conquista.
+- **Taxa Metabólica Basal**
+Calcule facilmente Taxa Metabólica Basal (TMB) para descobrir suas necessidades diárias de calorias
 
-### 📊 Estatísticas e Gráficos
-- Visualize seu progresso através de gráficos intuitivos.
-- Mantenha-se motivado com estatísticas detalhadas sobre suas conquistas.
+- **Experiência do Usuário Superior**
+Acompanhe seu progresso e faça ajustes com gráficos intuitivos
 
-## 🚀 Funcionalidades
+## 📌 Ferramentas
+- Arquitetura Hexagonal com Spring Multi Module
+- Envio de e-mail para criação de conta
+- Autenticação com token JWT
+- Testes de Unidade e Integração
+- Migration banco de dados
 
-### 💻 **Usuário**
-- Cadastrar novo usuário
-- Gerenciar perfil de usuário
+## 🔢 Diagrama de Funcionalidades
 
-### 🍏 **Alimentos**
-- Adicionar food
-- Gerenciar lista de alimentos
-- Calcular calorias
+![alt text](https://www.plantuml.com/plantuml/png/VPBFZjCm4CRlUOfXBnpGliEMfLiXiIjKBTm7Pre67BiQswW2yJ280wSzhNY2l1XEKgnHdFOInVxDV9_dpqs8A35rjddHqeuTmNPz-xXwsBnRWx4OGjCSq7p5FS7L6yQzO8VG4jmbPzWxjDnYIm5o7baShpfoqOSh-D40DA3qFeJK_nBs8m5u1RVOOeY2Kj09R4WewsVmdcJ7Db__RBGMh2nFFaLirV9eBuLLOYMf-5kJBChmuuKnr3vRsX7tV_g_jE1KwE_QIoMUSuE3rnAr-Vf8OlgdRBPWhkW9RMdFKpjNaR-DWu6x_YcmmVaJDXYY7uxzix1PiBwdY9-yvT3vObso7_689S8WlCQ0zl_xlgGGKRH0hVxMxRnqEBNd8KMPQc9Lfl7T0TrdFPo9t7l7qSjWWKQy6xB9HLeSdiMOAzJzsv2WQ7Aw_yWXeUNlYt1zpAEA5HhjNiut7_9N2F9Frp-toOwXPVUlhyiQpk_BG2kYcvbH4SXCBrfc-ZZBhE3vCMIXit0oLPtDmVhf5uMhq5bf-dXPw8PScphx3m00)
 
-### 🍽️ **Refeições**
-- Adicionar refeições ao planejamento
-- Gerenciar histórico de refeições
-- Calcular calorias por refeição
+## 💡 Próximos Passos
+### Relatórios
+- Gerar relatórios personalizados
+- Exportar Relatórios
 
-### 🏋️‍♂️ **Exercícios**
+### Planejamento Personalizado
+- Crie planos de dieta personalizados com base nos seus objetivos
+- Estabeleça metas realistas e atinja resultados surpreendentes
+
+### Rotinas de Exercícios
+- Acesse rotinas de exercícios adaptadas às suas preferências e nível de condicionamento físico
+- Acompanhe o seu progresso e celebre cada conquista
+
+### Exercícios
 - Adicionar exercícios
 - Registrar atividade física
 - Calcular gasto calórico
+- Integracao relogio de exercicios
 
-### 🔄 **Metabolismo**
-- Calcular Taxa Metabólica Basal (TMB)
-- Ajustar metabolismo
-
-### 📊 **Informações Nutricionais**
-- Acompanhar ingestão diária de calorias
-- Monitorar macronutrientes
-
-### 📈 **Relatórios**
-- Gerar relatórios personalizados
-- Visualizar progresso em gráficos intuitivos
-- Exportar Relatórios
-
-## 🔢 Diagramas
-
-![alt text](https://www.plantuml.com/plantuml/png/VPBFZjCm4CRlUOfXBnpGliEMfLiXiIjKBTm7Pre67BiQswW2yJ280wSzhNY2l1XEKgnHdFOInVxDV9_dpqs8A35rjddHqeuTmNPz-xXwsBnRWx4OGjCSq7p5FS7L6yQzO8VG4jmbPzWxjDnYIm5o7baShpfoqOSh-D40DA3qFeJK_nBs8m5u1RVOOeY2Kj09R4WewsVmdcJ7Db__RBGMh2nFFaLirV9eBuLLOYMf-5kJBChmuuKnr3vRsX7tV_g_jE1KwE_QIoMUSuE3rnAr-Vf8OlgdRBPWhkW9RMdFKpjNaR-DWu6x_YcmmVaJDXYY7uxzix1PiBwdY9-yvT3vObso7_689S8WlCQ0zl_xlgGGKRH0hVxMxRnqEBNd8KMPQc9Lfl7T0TrdFPo9t7l7qSjWWKQy6xB9HLeSdiMOAzJzsv2WQ7Aw_yWXeUNlYt1zpAEA5HhjNiut7_9N2F9Frp-toOwXPVUlhyiQpk_BG2kYcvbH4SXCBrfc-ZZBhE3vCMIXit0oLPtDmVhf5uMhq5bf-dXPw8PScphx3m00)
+### Receitas Saudáveis
+- Explore uma variedade de receitas deliciosas e saudáveis, elaboradas por outros usuários
+- Crie novas receitas deliciosas e compartilhe com seus amigos
 
 ## 📝 Backlog
 
