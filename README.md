@@ -1,5 +1,5 @@
 # 🍎 App.Dietas.API
-** Calculadora da tabela nutricional**
+**Calculadora da tabela nutricional**
 
 Este aplicativo foi desenvolvido para tornar sua experiência de dieta divertida, motivadora e eficaz. Ele oferece uma análise detalhada das calorias e nutrientes dos alimentos que você consome, permitindo que você entenda melhor a composição nutricional de cada refeição.
 
@@ -8,7 +8,7 @@ Compare o tamanho das porções para ajustar suas escolhas alimentares e veja co
 - **Calculadora de Gasto Energético Diário**
 Monitore calorias e macronutrientes consumidos diariamente
 
-- ** Compare Diferentes Tamanhos de Porções de Alimentos **
+- **Compare Diferentes Tamanhos de Porções de Alimentos**
 Analise nutrientes e calorias em diferentes tamanhos de porções
 
 - **Taxa Metabólica Basal**
@@ -47,32 +47,26 @@ Acompanhe seu progresso e faça ajustes com gráficos intuitivos
 - Calcular gasto calórico
 - Integracao relogio de exercicios
 
-### Receitas Saudáveis
-- Explore uma variedade de receitas deliciosas e saudáveis, elaboradas por outros usuários
-- Crie novas receitas deliciosas e compartilhe com seus amigos
-
 ## 📝 Backlog
 
-### 🔒 **Segurança**
-- Implementar autenticação segura
-- Garantir privacidade dos dados do usuário
-
-### 🌐 **Comunidade**
+### **Comunidade**
 - Compartilhar conquistas na comunidade
 - Postar fotos de refeições e receitas saudáveis
 - Criar grupos de amigos para compartilhar progresso
+- Crie novas receitas deliciosas e compartilhe com seus amigos
+- Explore uma variedade de receitas deliciosas e saudáveis, elaboradas por outros usuários
 
-### 📬 **Notificações**
+### **Notificações**
 - Configurar notificações personalizadas
 - Receber lembretes e atualizações
 
-### 🔗 **Integrações**
+### **Integrações**
 - Integrar com dispositivos
 - Conectar a Apps de Saúde
 - API externa de código de barras para facilitar o gerenciamento de alimentos
 - API externa de preços de supermercados para ajudar na criação da sua lista de compras inteligente
 
-### 🛒 **Lista de Compras Inteligente**
+### **Lista de Compras Inteligente**
 - Criar lista de compras baseada no plano de dieta
 - Economizar tempo e dinheiro com uma despensa saudável
 
