@@ -5,17 +5,17 @@ Este aplicativo foi desenvolvido para tornar sua experiência de dieta divertida
 
 Compare o tamanho das porções para ajustar suas escolhas alimentares e veja como cada alimento apoia seus objetivos, seja perder peso, ganhar massa muscular ou simplesmente manter uma dieta equilibrada.
 
-- **Calculadora de Gasto Energético Diário**
-Monitore calorias e macronutrientes consumidos diariamente
+- **Calculadora de Gasto Energético Diário:**
+monitore calorias e macronutrientes consumidos diariamente
 
-- **Compare Diferentes Tamanhos de Porções de Alimentos**
-Analise nutrientes e calorias em diferentes tamanhos de porções
+- **Compare Diferentes Tamanhos de Porções de Alimentos:**
+analise nutrientes e calorias em diferentes tamanhos de porções
 
-- **Taxa Metabólica Basal**
-Calcule facilmente Taxa Metabólica Basal (TMB) para descobrir suas necessidades diárias de calorias
+- **Taxa Metabólica Basal:**
+calcule facilmente Taxa Metabólica Basal (TMB) para descobrir suas necessidades diárias de calorias
 
-- **Experiência do Usuário Superior**
-Acompanhe seu progresso e faça ajustes com gráficos intuitivos
+- **Experiência do Usuário Superior:**
+acompanhe seu progresso e faça ajustes com gráficos intuitivos
 
 ## 📌 Ferramentas
 - Arquitetura Hexagonal com Spring Multi Module
