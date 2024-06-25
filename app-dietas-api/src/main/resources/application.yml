@@ -14,7 +14,15 @@ spring:
     enabled: ${FLYWAY_ENABLED:true}
     schemas: ${DB_SCHEMA:app_dietas}
     baselineOnMigrate: ${FLYWAY_BASELINE_ON_MIGRATE:true}
-
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail.smtp:
+        auth: ${MAIL_SMTP_AUTH:true}
+        starttls.enable: ${MAIL_SMTP_STARTTLS_ENABLE:true}
 app-dietas:
-  jwtSecret: bxOksa8BHgdAhR80Y3pEYvS5M+MnF2sheFDqprkTqQ4odqoszJLW1ikw64/nT/dTvlgrcBTq7HfK1B9Gai2h5A==
-  jwtExpirationMs: 900000
+  jwtSecret: ${JWT_SECRET:bxOksa8BHgdAhR80Y3pEYvS5M+MnF2sheFDqprkTqQ4odqoszJLW1ikw64/nT/dTvlgrcBTq7HfK1B9Gai2h5A==}
+  jwtExpirationMs: ${JWT_EXPIRATION_MS:900000}
