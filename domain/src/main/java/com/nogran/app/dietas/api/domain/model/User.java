@@ -1,6 +1,6 @@
 package com.nogran.app.dietas.api.domain.model;
 
-import com.nogran.app.dietas.api.domain.dto.enums.UserStatus;
+import com.nogran.app.dietas.api.domain.dto.enums.UserStatusEnum;
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +20,7 @@ public class User {
   private float weight;
   private int height;
   private String gender;
-  private UserStatus status;
+  private UserStatusEnum status;
+  private String createdBy;
 
 }

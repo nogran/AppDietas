@@ -36,7 +36,7 @@ public class UserVerificationEntity {
   private UUID uuid;
 
   @CreatedBy
-  @Column(name = "created_by", nullable = false)
+  @Column(name = "created_by", updatable = false)
   private String createdBy;
 
   @Column(name = "expiration_date", nullable = false)

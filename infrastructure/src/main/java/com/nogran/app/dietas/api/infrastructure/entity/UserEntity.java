@@ -1,6 +1,6 @@
 package com.nogran.app.dietas.api.infrastructure.entity;
 
-import com.nogran.app.dietas.api.domain.dto.enums.UserStatus;
+import com.nogran.app.dietas.api.domain.dto.enums.UserStatusEnum;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
@@ -58,7 +58,7 @@ public class UserEntity {
 
   @Enumerated(EnumType.STRING)
   @Column(name = "user_status", nullable = false)
-  private UserStatus userStatus;
+  private UserStatusEnum userStatusEnum;
 
 //  @Column(name = "goal")
 //  private String goal;

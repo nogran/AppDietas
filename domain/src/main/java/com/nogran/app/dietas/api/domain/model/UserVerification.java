@@ -12,10 +12,10 @@ import lombok.NoArgsConstructor;
 @Data
 public class UserVerification {
 
+  private Long id;
   private UUID uuid;
-  private Instant expirationDate;
   private User user;
-  private String createdBy;
+  private Instant expirationDate;
   private OffsetDateTime createdAt;
 
 }

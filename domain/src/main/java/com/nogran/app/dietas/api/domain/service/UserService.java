@@ -6,4 +6,6 @@ public interface UserService {
 
   User save(User user);
 
+  void verify(String uuid);
+
 }

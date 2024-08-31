@@ -10,10 +10,10 @@ public interface UserEntityMapper extends
     BaseMapper<User, UserEntity> {
 
   @Override
-  @Mapping(target = "status", source = "userStatus")
+  @Mapping(target = "status", source = "userStatusEnum")
   User toDomain(UserEntity entity);
 
   @Override
-  @Mapping(target = "userStatus", source = "status")
+  @Mapping(target = "userStatusEnum", source = "status")
   UserEntity toEntity(User user);
 }

@@ -6,27 +6,27 @@ import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 @JsonFormat(shape = Shape.OBJECT)
-public enum UserStatus {
+public enum UserStatusEnum {
 
   ACTIVE("A", "Ativo"),
   INACTIVE("I", "Inativo"),
   PENDING("P", "Pendente");
 
-  private String codigo;
-  private String descricao;
+  private String code;
+  private String description;
 
-  private UserStatus(String codigo, String descricao) {
-    this.codigo = codigo;
-    this.descricao = descricao;
+  UserStatusEnum(String code, String description) {
+    this.code = code;
+    this.description = description;
   }
 
   @JsonValue
-  public String getCodigo() {
-    return codigo;
+  public String getCode() {
+    return code;
   }
 
   @JsonCreator
-  public static UserStatus fromCode(String code) {
+  public static UserStatusEnum fromCode(String code) {
     if (code.equals("A")) {
       return ACTIVE;
     } else if (code.equals("I")) {

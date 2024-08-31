@@ -5,6 +5,7 @@ import com.nogran.app.dietas.api.domain.persistence.UserVerificationPersistence;
 import com.nogran.app.dietas.api.infrastructure.mapper.UserVerificationEntityMapper;
 import com.nogran.app.dietas.api.infrastructure.repository.UserVerificationRepository;
 import java.util.Optional;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -23,9 +24,15 @@ public class UserVerificationAdapter implements UserVerificationPersistence {
   }
 
   @Override
-  public Optional<UserVerification> findByLogin(String login) {
-    var entity = repository.findByUserLogin(login);
+  public Optional<UserVerification> findByUuid(UUID uuid) {
+    var entity = repository.findByUuid(uuid);
     return Optional.ofNullable(mapper.toDomain(entity.get()));
+  }
+
+  @Override
+  public void delete(UserVerification userVerification) {
+    var entity = mapper.toEntity(userVerification);
+    repository.delete(entity);
   }
 
 }
