@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateFoodRegistryDTO {
 
+  private String username;
   private String foodName;
   private float grams;
   private MealEnum mealEnum;

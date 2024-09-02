@@ -13,6 +13,7 @@ import java.time.Instant;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,14 @@ public class UserServiceImpl implements UserService {
   private final EmailService emailService;
   private final UserVerificationService userVerificationService;
   private final PasswordEncoder passwordEncoder;
+
+  public User findByUsername(String username) {
+    var persistenceUser = persistence.findByLogin(username);
+    if(persistenceUser.isEmpty()) {
+      throw new UsernameDuplicatedException();
+    }
+   return persistenceUser.get();
+  }
 
   public User save(User user) {
 

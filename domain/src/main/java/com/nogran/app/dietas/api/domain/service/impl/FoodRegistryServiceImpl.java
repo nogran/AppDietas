@@ -8,16 +8,20 @@ import com.nogran.app.dietas.api.domain.dto.MealDTO;
 import com.nogran.app.dietas.api.domain.dto.enums.MealEnum;
 import com.nogran.app.dietas.api.domain.model.Food;
 import com.nogran.app.dietas.api.domain.model.FoodRegistry;
-import com.nogran.app.dietas.api.domain.model.User;
 import com.nogran.app.dietas.api.domain.persistence.FoodRegistryPersistence;
+import com.nogran.app.dietas.api.domain.security.jwt.JwtUtils;
 import com.nogran.app.dietas.api.domain.service.FoodRegistryService;
 import com.nogran.app.dietas.api.domain.service.FoodService;
+import com.nogran.app.dietas.api.domain.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 @Service
 @RequiredArgsConstructor
@@ -25,6 +29,8 @@ public class FoodRegistryServiceImpl implements FoodRegistryService {
 
   private final FoodRegistryPersistence persistence;
   private final FoodService foodService;
+  private final UserService userService;
+  private final JwtUtils jwtUtils;
 
   @Override
   public List<FoodRegistry> findByReferenceDate(LocalDate referenceDate) {
@@ -34,11 +40,18 @@ public class FoodRegistryServiceImpl implements FoodRegistryService {
   @Override
   public FoodRegistry create(CreateFoodRegistryDTO createFoodRegistryDTO) {
 
+    HttpServletRequest request =
+        ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
+            .getRequest();
+
+    var token = request.getHeader("Authorization");
     var food = foodService.findByName(createFoodRegistryDTO.getFoodName());
+    var username = jwtUtils.getUsernameToken(token.replace("Bearer ", ""));
+    var user = userService.findByUsername(username);
 
     var foodRegistry = FoodRegistry.builder()
         .food(food.get())
-        .user(new User())
+        .user(user)
         .grams(createFoodRegistryDTO.getGrams())
         .mealEnum(createFoodRegistryDTO.getMealEnum())
         .referenceDate(createFoodRegistryDTO.getReferenceDate())

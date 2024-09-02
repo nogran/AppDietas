@@ -4,6 +4,7 @@ import com.nogran.app.dietas.api.domain.dto.enums.MealEnum;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -58,10 +59,10 @@ public class FoodRegistryEntity {
   private OffsetDateTime updatedAt;
 
   @JoinColumn(name = "user_id")
-  @ManyToOne
-  private UserEntity userEntity;
+  @ManyToOne(fetch = FetchType.LAZY)
+  private UserEntity user;
 
   @JoinColumn(name = "food_id")
-  @ManyToOne
-  private FoodEntity foodEntity;
+  @ManyToOne(fetch = FetchType.LAZY)
+  private FoodEntity food;
 }

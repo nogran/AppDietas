@@ -14,7 +14,7 @@ public interface FoodRegistryRepository extends JpaRepository<FoodRegistryEntity
 
   Optional<FoodRegistryEntity> findById(Long id);
 
-  @Query(value = "select r from FoodRegistryEntity r where r.foodEntity.name = ?1")
+  @Query(value = "select r from FoodRegistryEntity r where r.food.name = ?1")
   Optional<FoodRegistryEntity> findByFoodName(String foodName);
 
   List<FoodRegistryEntity> findByReferenceDate(LocalDate reference);
