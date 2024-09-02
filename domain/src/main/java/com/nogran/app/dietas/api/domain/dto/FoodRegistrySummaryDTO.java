@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import lombok.Builder;
 
 @Builder
-public class MealSummaryDTO {
+public class FoodRegistrySummaryDTO {
 
   private float totalCarbohydrate;
   private float totalProtein;

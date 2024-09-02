@@ -9,4 +9,6 @@ public interface UserPersistence {
 
   Optional<User> findByLogin(String username);
 
+  Optional<User> findByEmail(String email);
+
 }

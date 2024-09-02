@@ -7,7 +7,6 @@ import java.util.List;
 public class MacrosCalculator {
 
   private MacrosCalculator() {
-
   }
 
   public static MacrosDTO calculate(List<Food> foods) {

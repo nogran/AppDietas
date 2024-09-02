@@ -1,13 +1,13 @@
 package com.nogran.app.dietas.api.infrastructure.entity;
 
-import com.nogran.app.dietas.api.domain.dto.enums.MacroEnum;
+import com.nogran.app.dietas.api.domain.dto.enums.MealEnum;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import java.time.LocalDate;
@@ -21,26 +21,25 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
-@Table(name = "meal", catalog = "meal")
+@Table(name = "ngr_food_registry", catalog = "ngr_food_registry")
 @RequiredArgsConstructor
 @EntityListeners(value = AuditingEntityListener.class)
 @Data
-public class MealEntity {
+public class FoodRegistryEntity {
 
   @Id
-  @SequenceGenerator(name = "meal_seq", sequenceName = "meal_seq", allocationSize = 1)
-  @GeneratedValue(generator = "meal_seq")
+  @SequenceGenerator(name = "ngr_food_registry_seq", sequenceName = "ngr_food_registry_seq", allocationSize = 1)
+  @GeneratedValue(generator = "ngr_food_registry_seq")
   private Long id;
 
-  @Column(name = "name")
-  @Enumerated(EnumType.STRING)
-  private MacroEnum mealType;
+  @Column(name = "meal")
+  private MealEnum mealEnum;
 
-  @Column(name = "reference_date")
+  @Column(name = "grams")
+  private float grams;
+
+  @Column(name = "reference_date", nullable = false)
   private LocalDate referenceDate;
-
-  @Column(name = "food_id")
-  private Long foodId;
 
   @CreatedBy
   @Column(name = "created_by", nullable = false)
@@ -57,4 +56,12 @@ public class MealEntity {
   @UpdateTimestamp
   @Column(name = "updated_at", columnDefinition = "timestamp")
   private OffsetDateTime updatedAt;
+
+  @JoinColumn(name = "user_id")
+  @ManyToOne
+  private UserEntity userEntity;
+
+  @JoinColumn(name = "food_id")
+  @ManyToOne
+  private FoodEntity foodEntity;
 }

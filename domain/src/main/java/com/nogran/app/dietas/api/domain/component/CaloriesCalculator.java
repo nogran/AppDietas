@@ -6,7 +6,6 @@ import java.util.List;
 public class CaloriesCalculator {
 
   private CaloriesCalculator() {
-
   }
 
   public static float sum(List<Food> foods) {

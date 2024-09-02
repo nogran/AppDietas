@@ -1,16 +1,10 @@
-//package com.nogran.app.dietas.api.domain.service;
-//
-//import lombok.AllArgsConstructor;
-//import org.springframework.stereotype.Service;
-//
-//import java.time.LocalDate;
-//import java.util.Calendar;
-//import java.util.GregorianCalendar;
-//
-//@Service
-//@AllArgsConstructor
-//public class MetabolismService {
-//
-//
-//
-//}
+package com.nogran.app.dietas.api.domain.service;
+
+import com.nogran.app.dietas.api.domain.dto.enums.GenderEnum;
+import java.time.LocalDate;
+
+public interface MetabolismService {
+
+  Float harrisBenedictCalculator(
+      LocalDate bornDate, GenderEnum genderEnum, float height, float weight);
+}

@@ -1,5 +1,7 @@
 package com.nogran.app.dietas.api.domain.model;
 
+import com.nogran.app.dietas.api.domain.dto.enums.MealEnum;
+import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,21 +11,13 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Food {
+public class FoodRegistry {
 
   private Long id;
-
-  private String name;
-
-  private String company;
-
+  private Food food;
+  private User user;
   private float grams;
+  private MealEnum mealEnum;
+  private LocalDate referenceDate;
 
-  private float carbohydrate;
-
-  private float protein;
-
-  private float fat;
-
-  private float totalCalories;
 }

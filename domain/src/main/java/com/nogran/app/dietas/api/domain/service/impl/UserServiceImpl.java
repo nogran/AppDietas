@@ -1,6 +1,8 @@
 package com.nogran.app.dietas.api.domain.service.impl;
 
 import com.nogran.app.dietas.api.domain.dto.enums.UserStatusEnum;
+import com.nogran.app.dietas.api.domain.exception.EmailDuplicatedException;
+import com.nogran.app.dietas.api.domain.exception.UsernameDuplicatedException;
 import com.nogran.app.dietas.api.domain.model.User;
 import com.nogran.app.dietas.api.domain.model.UserVerification;
 import com.nogran.app.dietas.api.domain.persistence.UserPersistence;
@@ -25,6 +27,17 @@ public class UserServiceImpl implements UserService {
   private final PasswordEncoder passwordEncoder;
 
   public User save(User user) {
+
+    var persistedByUsername = persistence.findByLogin(user.getLogin());
+    if (persistedByUsername.isPresent()) {
+      throw new UsernameDuplicatedException();
+    }
+
+    var persistedByEmail = persistence.findByEmail(user.getEmail());
+    if (persistedByEmail.isPresent()) {
+      throw new EmailDuplicatedException();
+    }
+
     user.setStatus(UserStatusEnum.PENDING);
     user.setPassword(passwordEncoder.encode(user.getPassword()));
     var persistenceUser = persistence.save(user);

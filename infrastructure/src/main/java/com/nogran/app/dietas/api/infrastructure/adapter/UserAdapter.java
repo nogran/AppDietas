@@ -1,11 +1,12 @@
 package com.nogran.app.dietas.api.infrastructure.adapter;
 
+import com.nogran.app.dietas.api.domain.model.User;
 import com.nogran.app.dietas.api.domain.persistence.UserPersistence;
 import com.nogran.app.dietas.api.infrastructure.mapper.UserEntityMapper;
-import com.nogran.app.dietas.api.domain.model.User;
 import com.nogran.app.dietas.api.infrastructure.repository.UserRepository;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -25,7 +26,13 @@ public class UserAdapter implements UserPersistence {
   @Override
   public Optional<User> findByLogin(String login) {
     var entity = repository.findByLogin(login);
-    return Optional.ofNullable(mapper.toDomain(entity.get()));
+    return entity.map(mapper::toDomain);
+  }
+
+  @Override
+  public Optional<User> findByEmail(String email) {
+    var entity = repository.findByEmail(email);
+    return entity.map(mapper::toDomain);
   }
 
 }

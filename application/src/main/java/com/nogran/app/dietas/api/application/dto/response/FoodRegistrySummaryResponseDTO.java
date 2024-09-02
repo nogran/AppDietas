@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import lombok.Data;
 
 @Data
-public class MealSummaryResponseDTO {
+public class FoodRegistrySummaryResponseDTO {
 
   private float totalCarbohydrate;
   private float totalProtein;

@@ -1,7 +1,7 @@
-create sequence app_dietas.ngr_food_seq;
+create sequence ngr_food_seq;
 create table ngr_food
 (
-    id             BIGINT         NOT NULL PRIMARY KEY DEFAULT NEXTVAL('app_dietas.ngr_food_seq'),
+    id             BIGINT         NOT NULL PRIMARY KEY DEFAULT NEXTVAL('ngr_food_seq'),
     name           VARCHAR(100)   NOT NULL,
     grams          DECIMAL(10, 2) NOT NULL,
     carbohydrate   DECIMAL(10, 2) NOT NULL,
@@ -16,10 +16,10 @@ create table ngr_food
 );
 
 
-create sequence app_dietas.ngr_user_seq;
+create sequence ngr_user_seq;
 create table ngr_user
 (
-    id          BIGINT         NOT NULL PRIMARY KEY DEFAULT NEXTVAL('app_dietas.ngr_user_seq'),
+    id          BIGINT         NOT NULL PRIMARY KEY DEFAULT NEXTVAL('ngr_user_seq'),
     name        VARCHAR(100)   NOT NULL,
     email       VARCHAR(100)   NOT NULL UNIQUE,
     login       VARCHAR(100)   NOT NULL UNIQUE,
@@ -36,10 +36,10 @@ create table ngr_user
 );
 
 
-create sequence app_dietas.ngr_user_verification_seq;
+create sequence ngr_user_verification_seq;
 create table ngr_user_verification
 (
-    id              BIGINT      NOT NULL PRIMARY KEY DEFAULT NEXTVAL('app_dietas.ngr_user_verification_seq'),
+    id              BIGINT      NOT NULL PRIMARY KEY DEFAULT NEXTVAL('ngr_user_verification_seq'),
     uuid            UUID        NOT NULL,
     user_id         BIGINT      NOT NULL UNIQUE,
     created_by      VARCHAR(50) NOT NULL,

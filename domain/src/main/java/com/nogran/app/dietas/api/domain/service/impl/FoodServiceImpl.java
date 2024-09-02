@@ -1,9 +1,9 @@
 package com.nogran.app.dietas.api.domain.service.impl;
 
-import com.nogran.app.dietas.api.domain.persistence.FoodPersistence;
 import com.nogran.app.dietas.api.domain.exception.FoodDuplicatedException;
 import com.nogran.app.dietas.api.domain.exception.FoodNotFoundException;
 import com.nogran.app.dietas.api.domain.model.Food;
+import com.nogran.app.dietas.api.domain.persistence.FoodPersistence;
 import com.nogran.app.dietas.api.domain.service.FoodService;
 import java.util.List;
 import java.util.Optional;
@@ -29,7 +29,7 @@ public class FoodServiceImpl implements FoodService {
   @Override
   public Optional<Food> findByName(String name) {
     var optFood = persistence.findByName(name);
-    if (optFood.isPresent()) {
+    if (!optFood.isPresent()) {
       throw new FoodNotFoundException(name);
     }
     return optFood;
