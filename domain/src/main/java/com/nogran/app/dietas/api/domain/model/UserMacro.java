@@ -15,6 +15,6 @@ public class UserMacro {
   private Float proteinTarget;
   private Float fatTarget;
   private Float targetCalories;
-  private LocalDate createdAt;
+  private LocalDate referenceDate;
 
 }
